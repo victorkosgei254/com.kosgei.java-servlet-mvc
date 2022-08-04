@@ -17,3 +17,11 @@ dependencies {
 
 
 }
+
+serenity{
+    testRoot="src/test"
+    requirementsDir = "src/test/resources"
+    sourceDirectory="src/test/resources"
+}
+
+test.finalizedBy(aggregate)
