@@ -33,5 +33,18 @@
 
 ### User Accounts Managament
 
-To access premium resource, a user needs to create an account 
+  For a customer to be notified whenever there is a new product, discounts and offers the 
+  the customer needs to have a user account. 
+  * Users can create their account online 
+  * During account creation the following are required 
+    * Username 
+    * User email
+    * Strong password (check creteria for a strong password)
+  *The password field is case sensitive 
+  * There should be no duplicate emails 
+  * The username is case insensitive 
+  * A user can use a username or email to sign in to the account 
+  * A user can be able to view marketplace without signin 
+  * The user session should be set to time out at 15 minutes 
+  * There can be only one session per user. 
 
