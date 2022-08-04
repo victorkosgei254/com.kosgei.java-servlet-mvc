@@ -18,9 +18,7 @@
 
 
 **Project Vision**
->Intergrate my QA skills with my Software Development skills to begin a new 
-> Professional career as a Software Engineer. Combine QA with Software Development 
-> DevOps.
+> Increase sales by setting an online store where customers can order products and get them delivered to their locations.
 
 
 
@@ -34,3 +32,6 @@
 
 
 ### User Accounts Managament
+
+To access premium resource, a user needs to create an account 
+
