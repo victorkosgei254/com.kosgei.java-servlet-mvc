@@ -32,6 +32,7 @@ public class Signin extends HttpServlet{
 		}
 		Cookie authCookie = new Cookie("_token", "12345");
 		authCookie.setHttpOnly(true);
+		authCookie.setMaxAge(15*60);
 		response.addCookie(authCookie);
 		request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
 	}

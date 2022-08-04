@@ -1,0 +1,19 @@
+plugins{
+      id "net.serenity-bdd.serenity-gradle-plugin" version "3.3.1"
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core
+    implementation 'net.serenity-bdd:serenity-core:3.3.0'
+    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber
+    testImplementation 'net.serenity-bdd:serenity-cucumber:3.3.0'
+    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-junit
+    implementation 'net.serenity-bdd:serenity-junit:3.3.0'
+
+
+}
