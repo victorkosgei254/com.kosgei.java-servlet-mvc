@@ -10,6 +10,7 @@
 </head>
 <body class="container">
 	<jsp:include page="header.jsp" />
+	<h1>Welcome</h1>
 	<h1>${msg}</h1>
 
 		

@@ -1,3 +1,4 @@
+@user_account
 Feature: user login
 
   In order for a customer to access a protected resource
@@ -7,16 +8,17 @@ Feature: user login
   Background: User navigating to website
     Given The user navigates to "website"
 
+  @issue:KEY-6
   Scenario Outline: User login to com.kosgei.webapp with credentials
-    When  The user enters a <username> and <password>
-    Then  The user should <status>
+    When  The user enters a "<username>" and "<password>"
+    Then  The user should be redirected to url "<status>"
 
     Examples:
       |username|password|status|
-      |kosgei  | victor | true |
-      |Kosgei   | Victor | false |
-      | Victor  | Kosgei  | false |
-      | victor  | kosgei  | false|
+      |kosgei  | victor |http://localhost:8080/com.kosgei.webapp/|
+      |Kosgei   | Victor |http://localhost:8080/com.kosgei.webapp/signin|
+      | Victor  | Kosgei  |http://localhost:8080/com.kosgei.webapp/signin|
+      | victor  | kosgei  |http://localhost:8080/com.kosgei.webapp/signin|
 
   Scenario: User should receive a warning message whenever he or she enters an invalid credentials
       Given The user enters an invalid "username"

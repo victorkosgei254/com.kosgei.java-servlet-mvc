@@ -14,6 +14,9 @@ dependencies {
     testImplementation 'net.serenity-bdd:serenity-cucumber:3.3.0'
     // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-junit
     implementation 'net.serenity-bdd:serenity-junit:3.3.0'
+    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-jira-plugin
+    implementation 'net.serenity-bdd:serenity-jira-plugin:1.12.0'
+
 
 
 }
@@ -22,6 +25,9 @@ serenity{
     testRoot="src/test"
     requirementsDir = "src/test/resources"
     sourceDirectory="src/test/resources"
+
+    jiraProject="OrangeHRM"
+    jiraUrl="https://toshbott.atlassian.net"
 }
 
 test.finalizedBy(aggregate)

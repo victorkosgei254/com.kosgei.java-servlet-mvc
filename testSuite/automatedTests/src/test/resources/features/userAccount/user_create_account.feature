@@ -1,3 +1,4 @@
+@user_account
 Feature: user registration
   In order for Users to checkout, get notifications and to manage their subscription
   as a product manager

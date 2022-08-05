@@ -1,3 +1,4 @@
+@user_account
 Feature: user session management
   In order to provide more security
   As a product manager
@@ -76,7 +77,8 @@ Feature: user session management
 
       Examples:
       |cookie_name|cookie_value|
-      |usr_profile|{username,victor;profileUrl,/user?eAsdkncdsewds/profile.png;user_email,victorkosgei254@gmail.com}     |
+      |usr_profile|{username,victor;profileUrl,/user?eAsdkncdsewds/profile.png;user_email,victorkosgei254@gmail.com} |
+      |wish_list  |{itemone,url;item 2;url;item3,url}                                                                |
 
     Scenario Outline: Verify that profile session contains the required fields
       Given a user is successfully authenticated

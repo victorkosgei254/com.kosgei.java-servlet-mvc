@@ -34,7 +34,8 @@ public class Signin extends HttpServlet{
 		authCookie.setHttpOnly(true);
 		authCookie.setMaxAge(15*60);
 		response.addCookie(authCookie);
-		request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
+		response.sendRedirect("http://localhost:8080/com.kosgei.webapp/");
+//		request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
 	}
 
 }

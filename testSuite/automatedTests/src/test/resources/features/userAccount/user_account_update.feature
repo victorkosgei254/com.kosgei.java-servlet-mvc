@@ -1,3 +1,4 @@
+@user_account
 Feature: user account update
   I want to be able to edit my account details as I please
   as a customer

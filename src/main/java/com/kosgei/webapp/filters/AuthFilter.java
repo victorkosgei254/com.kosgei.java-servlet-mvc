@@ -27,12 +27,13 @@ public class AuthFilter implements Filter {
 			System.out.println("Redirect to Login");
 			Cookie[] me = ((HttpServletRequest) request).getCookies();
 			String token = "";
-			for (Cookie cookie:me){
-				if(cookie.getName().equals("_token")){
-					token = cookie.getValue();
-					break;
+			if (me.length != 0)
+				for (Cookie cookie:me){
+					if(cookie.getName().equals("_token")){
+						token = cookie.getValue();
+						break;
+					}
 				}
-			}
 			
 			if(token=="") {
 				request.getRequestDispatcher("WEB-INF/views/signin.jsp").forward(request, response);
