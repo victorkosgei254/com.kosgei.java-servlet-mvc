@@ -62,8 +62,21 @@ Feature: user session management
       Then  the payload section should not include user password
 
     Scenario: Verify that after successful login customer profile information is persisted in a session cookie
+        Given the user is successfully authenticated
+        When a js query is executed to fetch profile cookie
+        Then the results should not be null
 
-    Scenario: Verify that the profile session cookie is not HttpOnly
+    Scenario Outline: Verify that the profile session cookie is not HttpOnly
+      Given the user is authenticated
+      When  a js query is executed to fetch
+      |header|value|
+      |cookie name|<cookie_name>|
+      |cookie value|<cookie_value>|
+      Then the values should not be null
+
+      Examples:
+      |cookie_name|cookie_value|
+      |usr_profile|{username,victor;profileUrl,/user?eAsdkncdsewds/profile.png;user_email,victorkosgei254@gmail.com}     |
 
     Scenario Outline: Verify that profile session contains the required fields
       Given a user is successfully authenticated
