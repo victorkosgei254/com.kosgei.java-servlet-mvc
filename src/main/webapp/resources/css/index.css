@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@font-face{
+	font-family:roboto;
+	src: url(./roboto/Roboto-Regular.tff);
+}
+
+h1{
+	color:green;
+	font-family:'roboto';
+}
+
+body{
+	font-family:'roboto';
+}
+
+.item{
+	height:200px;
+	width:50%;
+	/* border:1px solid black; */
+	border-radius:5px;
+	margin-top:10%;/*  */
+	/* background-color:beige; */
+	font-family:'roboto';
+}
+
+.item span{
+	color: grey;
+	font-weight:bold;
+}
+.item h2{
+	text-align:center;
+	color:#0eb8fd;
+}
+
+.marketplace{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+}

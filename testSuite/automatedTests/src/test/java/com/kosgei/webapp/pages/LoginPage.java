@@ -33,4 +33,15 @@ public class LoginPage extends PageObject {
         String errMsg = $("//p").getText();
         return errMsg;
     }
+
+    public void navigateToUrl(String url){
+
+        driver.navigate().to(url);
+        driver.navigate().refresh();
+    }
+
+    public String getCurrentUrl(){
+        return driver.getCurrentUrl();
+    }
+
 }

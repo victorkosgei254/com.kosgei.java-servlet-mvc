@@ -32,10 +32,16 @@ Feature: user login
       |kosgei  | kosgei |There were errors in your form please try again,invalid username or password|
 
 
-    Scenario: Verify the user is redirected to signin page if he or she attempts to access any other route except login
+    Scenario Outline: Verify the user is redirected to signing page if he or she attempts to access any other route except login
       Given the user is not authenticated
-      And   the user tries to access any other url which is not the \signin url
-      Then  the user should be redirected to signin page
+      And   the user tries to access any  "<other_url>" which is not signinurl
+      Then  the user should be redirected to "<signin_url>" page
+
+      Examples:
+      |other_url|signin_url|
+      |http://localhost:8080/com.kosgei.webapp|http://localhost:8080/com.kosgei.webapp/signin|
+      |http://localhost:8080/com.kosgei.webapp/dashboard|http://localhost:8080/com.kosgei.webapp/signin|
+      |http://localhost:8080/com.kosgei.webapp/welcome  |http://localhost:8080/com.kosgei.webapp/signin|
 
 
       Scenario: Verify the user is redirected to Dashboard after a successful login

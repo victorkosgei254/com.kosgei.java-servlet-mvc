@@ -42,4 +42,20 @@ public class LoginPageSteps {
         Assert.assertTrue(err.equals(errMsg));
     }
 
+    @Given("the user is not authenticated")
+    public void the_user_is_not_authenticated() {
+        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+    }
+    @Given("the user tries to access any  {string} which is not signinurl")
+    public void the_user_tries_to_access_any_which_is_not_signinurl(String string) {
+        loginPage.navigateToUrl(string);
+    }
+    @Then("the user should be redirected to {string} page")
+    public void the_user_should_be_redirected_to_page(String string) {
+        String currentUrl = loginPage.getCurrentUrl();
+        System.out.println(currentUrl);
+        Assert.assertTrue("Expected "+string+" Current Url "+currentUrl,currentUrl.equals(string));
+    }
+
 }
