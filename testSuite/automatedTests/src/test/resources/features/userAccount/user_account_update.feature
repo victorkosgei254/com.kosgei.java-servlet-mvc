@@ -93,5 +93,39 @@ Feature: user account update
     |profile.pdf |fail            |*.png,*.jpeg,*.jpg files only|
 
 
+    @manual
+    Scenario: Verify that the profile picture uploaded is the one displayed
+      Given the user has successfully uploaded a profile picture
+      When  the user views the profile picture
+      Then  the latest uploaded profile picture should be displayed
 
-  Scenario: Delete account
+
+
+  Scenario Outline: Verify that the user can delete his or her account
+    Given the user is on profiles tab
+    When  user clicks delete my account
+    Then  the user is prompted with a pop up dialog  <prompt> and a reason text area
+    Examples:
+      | prompt |
+      |Enter your password to delete your account|
+
+    Scenario Outline: Verify that once a user has deleted account, he or she cannot login to that account until registration
+      Given that a user has deleted <accountUsername> <accountPassword>
+      When  the user tries to log in
+      Then  the user should receive a <msg>
+
+      Examples:
+        |accountUsername|accountPassword|msg|
+        |kosgei         |onetwothree    |Username or password does not exist|
+
+      Scenario: Verify that once a user has deleted account he or she is re-directed to signin page
+        Given that the user wants to delete an account
+        When  the user clicks on delete this account
+        Then  the account is deleted and user is re-directed to homepage
+
+
+      @manual
+      Scenario: Verify that once a user has deleted account his or her session is cleared
+        Given that the user has successfully deleted an account
+        Then  the user session should be cleared simultaneously
+
