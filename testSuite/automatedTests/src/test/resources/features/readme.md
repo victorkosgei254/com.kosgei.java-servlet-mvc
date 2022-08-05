@@ -13,7 +13,7 @@
 * Phase One 
   * Scope : 
     * User accounts 
-    * Dashboard
+    * Marketplace
 * Phase Two 
 
 

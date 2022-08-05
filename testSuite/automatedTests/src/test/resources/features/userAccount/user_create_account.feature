@@ -11,7 +11,7 @@ Feature: user registration
 
     Examples:
       |field|type|validation|isOptional|
-      |username|text|none   |true      |
+      |username|text|none   |false      |
       |email   |email|required|false|
       |password1|password|required|false|
       |password2|password|required|false|
