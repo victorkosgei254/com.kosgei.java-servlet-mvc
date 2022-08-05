@@ -40,3 +40,13 @@ Feature: user login
         Then  user should be able to see a profile tab
         And   the profile tab should contain notifications, messages and history
 
+    Scenario: Verify the user should see a already sign in message when navigating to signin page
+      Given user is already signed in
+      When  user navigates to signin page
+      Then  user should see already signed in "message"
+
+
+      Scenario: Verify the user is provided with a create account option
+        Given the user does not have an account
+        When  the user needs to create account
+        Then  the user should see a create account option
