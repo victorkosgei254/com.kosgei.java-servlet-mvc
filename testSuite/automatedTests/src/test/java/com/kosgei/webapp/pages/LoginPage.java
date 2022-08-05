@@ -25,8 +25,12 @@ public class LoginPage extends PageObject {
     }
 
     public String checkLoginStatus(){
-
         String url = driver.getCurrentUrl();
         return url;
+    }
+
+    public String checkForErrorMsgs(){
+        String errMsg = $("//p").getText();
+        return errMsg;
     }
 }

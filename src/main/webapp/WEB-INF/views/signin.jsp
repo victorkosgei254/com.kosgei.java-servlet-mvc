@@ -14,13 +14,11 @@
 
 <body class="container">
 	<h1>Signin Page</h1>
-	<p>${tryAgain}</p>
+	<p>${errorMsg}</p>
 	<form action="/com.kosgei.webapp/signin" method="post">
 		<div class="login">
-			<p>${errUsername}</p>
 			<label for="username" id="usernameInput" test="username">Username</label>
 			<input type="text" placeholder="enter your username" name="username" />
-			<p>${errPassword}</p>
 			<label for="password" id="passwordInput" test="username">Password</label>
 			<input type="password" placeholder="enter your password"
 				name="password" test="passwordField" />

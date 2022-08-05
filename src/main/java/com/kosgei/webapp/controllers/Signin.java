@@ -25,9 +25,7 @@ public class Signin extends HttpServlet{
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		if(!(authService.authenticate(username, password))) {
-			request.setAttribute("tryAgain", "There were errors in your form please try again");
-			request.setAttribute("errUsername", "Invalid password or username");
-			request.setAttribute("errPassword", "Invalid password or username");
+			request.setAttribute("errorMsg", "There were errors in your form please try again,invalid username or password");
 			request.getRequestDispatcher("WEB-INF/views/signin.jsp").forward(request, response);
 		}
 		Cookie authCookie = new Cookie("_token", "12345");
@@ -35,7 +33,7 @@ public class Signin extends HttpServlet{
 		authCookie.setMaxAge(15*60);
 		response.addCookie(authCookie);
 		response.sendRedirect("http://localhost:8080/com.kosgei.webapp/");
-//		request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
+//		p
 	}
 
 }

@@ -20,10 +20,17 @@ Feature: user login
       | Victor  | Kosgei  |http://localhost:8080/com.kosgei.webapp/signin|
       | victor  | kosgei  |http://localhost:8080/com.kosgei.webapp/signin|
 
-  Scenario: User should receive a warning message whenever he or she enters an invalid credentials
-      Given The user enters an invalid "username"
+  Scenario Outline: User should receive a warning message whenever he or she enters an invalid credentials
+      Given The user enters an invalid details "<username>" and "<password>"
       When  user clicks login
-      Then  user should see an "usernameErrorMessage","passwordMessage" and "errorMessage"
+      Then  user should see an "<errorMsg>"
+
+    Examples:
+      |username|password|errorMsg|
+      |victor  | victor |There were errors in your form please try again,invalid username or password|
+      |kosgei  | Victor |There were errors in your form please try again,invalid username or password|
+      |kosgei  | kosgei |There were errors in your form please try again,invalid username or password|
+
 
     Scenario: Verify the user is redirected to signin page if he or she attempts to access any other route except login
       Given the user is not authenticated
